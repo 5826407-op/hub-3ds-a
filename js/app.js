@@ -17,9 +17,12 @@ modulos.forEach((modulo, indice) => {
   const titulo = document.createElement("h3");
   titulo.textContent = modulo.nombre;
 
+  const profesor = document.createElement("p");
+  profesor.textContent = modulo.profesor;
+
   const descripcion = document.createElement("p");
   descripcion.textContent = modulo.descripcion;
 
-  tarjeta.append(numero, titulo, descripcion);
+  tarjeta.append(numero, titulo, profesor, descripcion);
   listaModulos.append(tarjeta);
 });
