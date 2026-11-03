@@ -113,6 +113,16 @@ h2 {
   font-weight: 700;
 }
 
+.seccion-profesor + .seccion-profesor {
+  margin-top: 2.5rem;
+}
+
+.profesor-titulo {
+  margin: 0 0 1rem;
+  font-size: 1.3rem;
+  letter-spacing: -0.025em;
+}
+
 .lista-modulos {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(min(100%, 230px), 1fr));
@@ -128,19 +138,7 @@ h2 {
   box-shadow: 0 8px 24px rgb(23 32 51 / 4%);
 }
 
-.numero-modulo {
-  display: inline-grid;
-  width: 2.4rem;
-  height: 2.4rem;
-  margin-bottom: 1.25rem;
-  place-items: center;
-  color: #514bb4;
-  background: #e9e8ff;
-  border-radius: 0.75rem;
-  font-weight: 800;
-}
-
-.tarjeta-modulo h3 {
+.tarjeta-modulo h4 {
   margin: 0 0 0.55rem;
   font-size: 1.1rem;
 }

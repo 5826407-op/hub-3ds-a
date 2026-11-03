@@ -5,24 +5,42 @@ const contadorModulos = document.querySelector("#contador-modulos");
 
 contadorModulos.textContent = `${modulos.length} módulos`;
 
-modulos.forEach((modulo, indice) => {
-  const tarjeta = document.createElement("article");
-  tarjeta.className = "tarjeta-modulo";
+const modulosPorProfesor = new Map();
+modulos.forEach((modulo) => {
+  const modulosDelProfesor = modulosPorProfesor.get(modulo.profesor) ?? [];
+  modulosDelProfesor.push(modulo);
+  modulosPorProfesor.set(modulo.profesor, modulosDelProfesor);
+});
 
-  const numero = document.createElement("span");
-  numero.className = "numero-modulo";
-  numero.setAttribute("aria-hidden", "true");
-  numero.textContent = String(indice + 1).padStart(2, "0");
+modulosPorProfesor.forEach((modulosDelProfesor, profesor) => {
+  const seccion = document.createElement("section");
+  seccion.className = "seccion-profesor";
+  seccion.setAttribute("aria-label", profesor);
 
-  const titulo = document.createElement("h3");
-  titulo.textContent = modulo.nombre;
+  const tituloSeccion = document.createElement("h3");
+  tituloSeccion.className = "profesor-titulo";
+  tituloSeccion.textContent = profesor;
 
-  const profesor = document.createElement("p");
-  profesor.textContent = modulo.profesor;
+  const tarjetas = document.createElement("div");
+  tarjetas.className = "lista-modulos";
 
-  const descripcion = document.createElement("p");
-  descripcion.textContent = modulo.descripcion;
+  modulosDelProfesor.forEach((modulo) => {
+    const tarjeta = document.createElement("article");
+    tarjeta.className = "tarjeta-modulo";
 
-  tarjeta.append(numero, titulo, profesor, descripcion);
-  listaModulos.append(tarjeta);
+    const titulo = document.createElement("h4");
+    titulo.textContent = modulo.nombre;
+    tarjeta.append(titulo);
+
+    if (modulo.descripcion) {
+      const descripcion = document.createElement("p");
+      descripcion.textContent = modulo.descripcion;
+      tarjeta.append(descripcion);
+    }
+
+    tarjetas.append(tarjeta);
+  });
+
+  seccion.append(tituloSeccion, tarjetas);
+  listaModulos.append(seccion);
 });
