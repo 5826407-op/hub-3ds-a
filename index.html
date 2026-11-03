@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Mi HUB 3DS·A</title>
+  <meta name="description" content="Portal de recursos de Mi HUB 3DS·A.">
+  <link rel="stylesheet" href="./css/estilos.css">
+  <script type="module" src="./js/app.js"></script>
+</head>
+<body>
+  <header class="encabezado">
+    <a class="marca" href="./" aria-label="Mi HUB 3DS·A, inicio">HUB <span>3DS·A</span></a>
+    <p class="etiqueta">Tu espacio digital</p>
+  </header>
+
+  <main>
+    <section class="bienvenida" aria-labelledby="titulo-principal">
+      <p class="sobrelinea">Bienvenido/a</p>
+      <h1 id="titulo-principal">Todo lo que necesitas,<br>en un solo lugar.</h1>
+      <p class="introduccion">Explora los módulos disponibles en tu portal.</p>
+    </section>
+
+    <section class="seccion-modulos" aria-labelledby="titulo-modulos">
+      <div class="titulo-seccion">
+        <div>
+          <p class="sobrelinea">Explora</p>
+          <h2 id="titulo-modulos">Tus módulos</h2>
+        </div>
+        <span id="contador-modulos" class="contador" aria-live="polite"></span>
+      </div>
+      <div id="lista-modulos" class="lista-modulos"></div>
+    </section>
+  </main>
+
+  <footer>
+    <p>Mi HUB 3DS·A</p>
+  </footer>
+</body>
+</html>

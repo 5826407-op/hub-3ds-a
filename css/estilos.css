@@ -1,0 +1,172 @@
+:root {
+  color-scheme: light;
+  font-family: "Segoe UI", Arial, sans-serif;
+  color: #172033;
+  background: #f5f7fb;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  min-width: 320px;
+  min-height: 100vh;
+  margin: 0;
+}
+
+.encabezado {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.25rem max(6vw, calc((100vw - 1100px) / 2));
+  background: #fff;
+  border-bottom: 1px solid #e8ebf2;
+}
+
+.marca {
+  color: #172033;
+  font-size: 1.15rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  text-decoration: none;
+}
+
+.marca span {
+  color: #635bdb;
+}
+
+.etiqueta,
+footer p {
+  margin: 0;
+  color: #65708a;
+  font-size: 0.9rem;
+}
+
+main {
+  width: min(100% - 2.5rem, 1100px);
+  margin: 0 auto;
+}
+
+.bienvenida {
+  padding: clamp(4rem, 10vw, 7rem) 0 4rem;
+}
+
+.sobrelinea {
+  margin: 0 0 0.8rem;
+  color: #635bdb;
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+h1,
+h2,
+p {
+  margin-top: 0;
+}
+
+h1 {
+  margin-bottom: 1rem;
+  font-size: clamp(2.4rem, 6vw, 4.5rem);
+  letter-spacing: -0.055em;
+  line-height: 1.05;
+}
+
+.introduccion {
+  margin-bottom: 0;
+  color: #65708a;
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+.seccion-modulos {
+  padding-bottom: 5rem;
+}
+
+.titulo-seccion {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  margin-bottom: 1.5rem;
+}
+
+.titulo-seccion .sobrelinea {
+  margin-bottom: 0.35rem;
+}
+
+h2 {
+  margin-bottom: 0;
+  font-size: 1.8rem;
+  letter-spacing: -0.035em;
+}
+
+.contador {
+  padding: 0.45rem 0.75rem;
+  color: #514bb4;
+  background: #e9e8ff;
+  border-radius: 999px;
+  font-size: 0.85rem;
+  font-weight: 700;
+}
+
+.lista-modulos {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 230px), 1fr));
+  gap: 1rem;
+}
+
+.tarjeta-modulo {
+  min-height: 180px;
+  padding: 1.5rem;
+  background: #fff;
+  border: 1px solid #e8ebf2;
+  border-radius: 1rem;
+  box-shadow: 0 8px 24px rgb(23 32 51 / 4%);
+}
+
+.numero-modulo {
+  display: inline-grid;
+  width: 2.4rem;
+  height: 2.4rem;
+  margin-bottom: 1.25rem;
+  place-items: center;
+  color: #514bb4;
+  background: #e9e8ff;
+  border-radius: 0.75rem;
+  font-weight: 800;
+}
+
+.tarjeta-modulo h3 {
+  margin: 0 0 0.55rem;
+  font-size: 1.1rem;
+}
+
+.tarjeta-modulo p {
+  margin: 0;
+  color: #65708a;
+  line-height: 1.55;
+}
+
+footer {
+  padding: 1.5rem max(6vw, calc((100vw - 1100px) / 2));
+  background: #fff;
+  border-top: 1px solid #e8ebf2;
+}
+
+@media (max-width: 520px) {
+  .encabezado {
+    padding: 1rem 1.25rem;
+  }
+
+  .etiqueta {
+    font-size: 0.8rem;
+  }
+
+  .bienvenida {
+    padding-top: 4rem;
+  }
+}
