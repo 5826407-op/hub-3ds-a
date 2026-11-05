@@ -17,8 +17,8 @@
   <main>
     <section class="bienvenida" aria-labelledby="titulo-principal">
       <p class="sobrelinea">Bienvenido/a</p>
-      <h1 id="titulo-principal">Todo lo que necesitas,<br>en un solo lugar.</h1>
-      <p class="introduccion">Explora los módulos disponibles en tu portal.</p>
+      <h1 id="titulo-principal">Todo mi año en tercero software,<br>en un solo lugar.</h1>
+      <p class="introduccion">Explora los módulos disponibles .</p>
     </section>
 
     <section class="seccion-modulos" aria-labelledby="titulo-modulos">
@@ -29,9 +29,87 @@
         </div>
         <span id="contador-modulos" class="contador" aria-live="polite"></span>
       </div>
+      <section class="progreso-repaso" aria-label="Progreso del repaso">
+        <div class="encabezado-progreso">
+          <h3>Progreso del repaso</h3>
+          <span id="porcentaje-progreso" aria-live="polite">0% de módulos repasados</span>
+        </div>
+        <div
+          class="pista"
+          role="progressbar"
+          aria-label="Módulos repasados"
+          aria-valuemin="0"
+          aria-valuemax="100"
+          aria-valuenow="0"
+        ><i></i></div>
+        <p id="mensaje-progreso-completo" class="mensaje-progreso-completo" role="status" hidden>
+          ¡Felicidades! Completaste el repaso de todos los módulos.
+        </p>
+        <p id="estado-progreso" class="estado-progreso" role="status" aria-live="polite"></p>
+      </section>
+      <div class="filtros-modulos">
+        <div class="filtro">
+          <label for="buscar">Buscar módulos</label>
+          <input id="buscar" type="search" placeholder="Nombre, programa o herramienta">
+        </div>
+        <div class="filtro">
+          <label for="filtroDocente">Filtrar por docente</label>
+          <select id="filtroDocente">
+            <option value="todos">Todos los docentes</option>
+            <option value="Javier Mineros">Javier Mineros</option>
+            <option value="Arcides Canales">Arcides Canales</option>
+            <option value="Julio">Profesor Julio</option>
+          </select>
+        </div>
+      </div>
       <div id="lista-modulos" class="lista-modulos"></div>
     </section>
   </main>
+
+  <dialog id="ficha-modulo" class="dialog-ficha" aria-labelledby="ficha-modulo-nombre">
+    <div class="encabezado-ficha">
+      <div>
+        <span id="ficha-modulo-docente" class="etiqueta-docente"></span>
+        <h2 id="ficha-modulo-nombre"></h2>
+      </div>
+      <button
+        class="boton-cerrar-ficha"
+        type="button"
+        aria-label="Cerrar ficha del módulo"
+        autofocus
+      >×</button>
+    </div>
+    <div id="contenido-ficha-modulo" class="contenido-ficha"></div>
+  </dialog>
+
+  <dialog id="dialogo-quiz" class="dialog-ficha dialogo-quiz" aria-labelledby="titulo-quiz">
+    <div class="encabezado-ficha">
+      <div>
+        <span id="docente-quiz" class="etiqueta-docente"></span>
+        <h2 id="titulo-quiz">Quiz del módulo</h2>
+      </div>
+      <button
+        class="boton-cerrar-quiz"
+        type="button"
+        aria-label="Cerrar quiz"
+        autofocus
+      >×</button>
+    </div>
+    <div class="contenido-quiz">
+      <p id="progreso-quiz" class="progreso-quiz"></p>
+      <div id="pregunta-quiz"></div>
+      <div id="retroalimentacion-quiz" class="retroalimentacion-quiz" role="status" aria-live="polite"></div>
+      <p id="estado-quiz" class="estado-quiz" role="status" aria-live="polite"></p>
+      <div class="acciones-quiz">
+        <button id="siguiente-pregunta" class="boton-accion-quiz" type="button" hidden>
+          Siguiente pregunta
+        </button>
+        <button id="repetir-quiz" class="boton-accion-quiz" type="button" hidden>
+          Repetir quiz
+        </button>
+      </div>
+    </div>
+  </dialog>
 
   <footer>
     <p>Mi HUB 3DS·A</p>
